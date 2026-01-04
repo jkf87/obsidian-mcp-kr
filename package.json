@@ -1,0 +1,57 @@
+{
+  "name": "obsidian-mcp-kr",
+  "version": "1.0.0",
+  "description": "Obsidian vault를 AI 어시스턴트와 연동하는 MCP 서버 (한국어 지원)",
+  "type": "module",
+  "main": "build/main.js",
+  "bin": {
+    "obsidian-mcp-kr": "./build/main.js"
+  },
+  "files": [
+    "build",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": "./build/main.js",
+    "./utils/*": "./build/utils/*.js",
+    "./resources/*": "./build/resources/*.js"
+  },
+  "peerDependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4"
+  },
+  "dependencies": {
+    "yaml": "^2.6.1",
+    "zod": "^3.22.4",
+    "zod-to-json-schema": "^3.24.1"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "@types/bun": "latest"
+  },
+  "scripts": {
+    "build": "bun build ./src/main.ts --outdir build --target node && chmod +x build/main.js",
+    "start": "bun build/main.js",
+    "prepublishOnly": "npm run build",
+    "inspect": "bunx @modelcontextprotocol/inspector bun ./build/main.js"
+  },
+  "keywords": [
+    "obsidian",
+    "mcp",
+    "ai",
+    "notes",
+    "knowledge-management",
+    "korean"
+  ],
+  "author": "conanssam",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/conanssam/obsidian-mcp-kr"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}
