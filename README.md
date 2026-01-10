@@ -37,8 +37,8 @@ npm run build
     "obsidian-mcp-kr": {
       "command": "node",
       "args": [
-        "/Users/conanssam-m4/obsi-mcp-test/obsidian-mcp-kr/build/main.js",
-        "/Users/conanssam-m4/Library/Mobile Documents/iCloud~md~obsidian/Documents"
+        "/Users/conanssam-m4/obsi-mcp-test/obsidian-mcp-kr/build/main.js", #mcp 서버 위치
+        "/Users/conanssam-m4/Library/Mobile Documents/iCloud~md~obsidian/Documents" #옵시디언 볼트 위치
       ]
     }
   }
