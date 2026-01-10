@@ -30,38 +30,20 @@ npm run build
 ## 사용법
 
 ### Claude Desktop 설정
-
-`~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) 또는
-`%APPDATA%\Claude\claude_desktop_config.json` (Windows)에 추가:
-
-```json
+.mcp.json
+```
 {
-  "mcpServers": {
-    "obsidian": {
-      "command": "obsidian-mcp-kr",
-      "args": [
-        "~/Documents/Obsidian/MyVault"
-      ]
+    "mcpServers": {
+      "obsidian-mcp-kr": {
+        "command": "node",
+        "args": [
+          "/Users/conanssam-m4/obsi-mcp-test/obsidian-mcp-kr/build/main.js"
+        ]
+      }
     }
   }
-}
 ```
 
-### 여러 vault 연결
-
-```json
-{
-  "mcpServers": {
-    "obsidian": {
-      "command": "obsidian-mcp-kr",
-      "args": [
-        "~/Documents/Obsidian/Work",
-        "~/Documents/Obsidian/Personal"
-      ]
-    }
-  }
-}
-```
 
 ## 제공 도구 (Tools)
 
