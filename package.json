@@ -1,9 +1,10 @@
 {
   "name": "obsidian-mcp-kr",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Obsidian vault를 AI 어시스턴트와 연동하는 MCP 서버 (한국어 지원)",
   "type": "module",
-  "main": "build/main.js",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "bin": {
     "obsidian-mcp-kr": "./build/main.js"
   },
@@ -13,9 +14,34 @@
     "LICENSE"
   ],
   "exports": {
-    ".": "./build/main.js",
-    "./utils/*": "./build/utils/*.js",
-    "./resources/*": "./build/resources/*.js"
+    ".": {
+      "types": "./build/index.d.ts",
+      "import": "./build/index.js"
+    },
+    "./cli": {
+      "types": "./build/main.d.ts",
+      "import": "./build/main.js"
+    },
+    "./server": {
+      "types": "./build/server.d.ts",
+      "import": "./build/server.js"
+    },
+    "./types": {
+      "types": "./build/types.d.ts",
+      "import": "./build/types.js"
+    },
+    "./tools/*": {
+      "types": "./build/tools/*/index.d.ts",
+      "import": "./build/tools/*/index.js"
+    },
+    "./utils/*": {
+      "types": "./build/utils/*.d.ts",
+      "import": "./build/utils/*.js"
+    },
+    "./resources/*": {
+      "types": "./build/resources/*.d.ts",
+      "import": "./build/resources/*.js"
+    }
   },
   "peerDependencies": {
     "@modelcontextprotocol/sdk": "^1.0.4"
@@ -32,10 +58,10 @@
     "@types/bun": "latest"
   },
   "scripts": {
-    "build": "bun build ./src/main.ts --outdir build --target node && chmod +x build/main.js",
-    "start": "bun build/main.js",
+    "build": "tsc && chmod +x build/main.js",
+    "start": "node build/main.js",
     "prepublishOnly": "npm run build",
-    "inspect": "bunx @modelcontextprotocol/inspector bun ./build/main.js"
+    "inspect": "bunx @modelcontextprotocol/inspector node ./build/main.js"
   },
   "keywords": [
     "obsidian",
@@ -49,7 +75,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/conanssam/obsidian-mcp-kr"
+    "url": "https://github.com/jkf87/obsidian-mcp-kr"
   },
   "engines": {
     "node": ">=16"

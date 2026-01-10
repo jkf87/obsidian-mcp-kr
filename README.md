@@ -26,10 +26,10 @@ npm install -g obsidian-mcp-kr
 ### 소스에서 빌드
 
 ```bash
-git clone https://github.com/conanssam/obsidian-mcp-kr.git
+git clone https://github.com/jkf87/obsidian-mcp-kr.git
 cd obsidian-mcp-kr
-bun install
-bun run build
+npm install
+npm run build
 ```
 
 ## 사용법
@@ -94,6 +94,36 @@ bun run build
 "새 노트를 만들어줘: 제목은 '오늘 할 일', 내용은 체크리스트로"
 "이 노트에 #todo 태그를 추가해줘"
 ```
+
+## 라이브러리로 사용
+
+다른 프로젝트에서 import하여 사용할 수 있습니다:
+
+```typescript
+import {
+  ObsidianServer,
+  createCreateNoteTool,
+  createSearchVaultTool
+} from "obsidian-mcp-kr";
+
+// 서버 인스턴스 생성
+const server = new ObsidianServer([
+  { name: "my-vault", path: "/path/to/vault" }
+]);
+
+// 개별 도구 사용
+const vaults = new Map([["my-vault", "/path/to/vault"]]);
+const createNote = createCreateNoteTool(vaults);
+const searchVault = createSearchVaultTool(vaults);
+```
+
+### Export 구조
+
+- `obsidian-mcp-kr` - 모든 모듈 (서버, 도구, 유틸리티)
+- `obsidian-mcp-kr/server` - ObsidianServer 클래스만
+- `obsidian-mcp-kr/types` - 타입 정의
+- `obsidian-mcp-kr/tools/*` - 개별 도구
+- `obsidian-mcp-kr/utils/*` - 유틸리티 함수
 
 ## 보안 사항
 
