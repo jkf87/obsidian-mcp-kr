@@ -17,11 +17,6 @@ AI 어시스턴트(Claude, GPT 등)가 Obsidian vault와 상호작용할 수 있
 - Bun (빌드용)
 - Obsidian에서 한 번 이상 열어본 vault
 
-### npm으로 설치
-
-```bash
-npm install -g obsidian-mcp-kr
-```
 
 ### 소스에서 빌드
 
