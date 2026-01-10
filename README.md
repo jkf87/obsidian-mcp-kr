@@ -33,15 +33,17 @@ npm run build
 .mcp.json
 ```
 {
-    "mcpServers": {
-      "obsidian-mcp-kr": {
-        "command": "node",
-        "args": [
-          "/Users/conanssam-m4/obsi-mcp-test/obsidian-mcp-kr/build/main.js"
-        ]
-      }
+  "mcpServers": {
+    "obsidian-mcp-kr": {
+      "command": "node",
+      "args": [
+        "/Users/conanssam-m4/obsi-mcp-test/obsidian-mcp-kr/build/main.js",
+        "/Users/conanssam-m4/Library/Mobile Documents/iCloud~md~obsidian/Documents"
+      ]
     }
   }
+}
+
 ```
 
 
