@@ -72,7 +72,14 @@ npm run build
 "2.연구 폴더에서 'RDF' 관련 노트를 검색해줘"
 "새 노트를 만들어줘: 제목은 '오늘 할 일', 내용은 체크리스트로"
 "이 노트에 #todo 태그를 추가해줘"
+"옵시디언 mcp로 코난쌤 볼트에서 ai 관련 기초, 활용 팁에 관련된 노트들을 찾아줘"
 ```
+
+### 결과
+
+<img width="751" height="497" alt="image" src="https://github.com/user-attachments/assets/9906cc76-122d-4eab-a743-f5521da44c77" />
+
+
 
 ## 라이브러리로 사용
 
