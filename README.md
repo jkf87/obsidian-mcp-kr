@@ -46,6 +46,22 @@ npm run build
 
 ```
 
+### Antigravity 설정
+
+```
+{
+  "mcpServers": {
+    "obsidian-mcp-kr": {
+      "command": "/usr/local/bin/node",
+      "args": [
+        "/Users/conanssam-m4/obsi-mcp-test/obsidian-mcp-kr/build/main.js",
+        "/Users/conanssam-m4/Library/Mobile Documents/iCloud~md~obsidian/Documents"
+      ]
+    }
+  }
+}
+```
+
 
 ## 제공 도구 (Tools)
 
